@@ -76,6 +76,10 @@ public class SpeciesListStage implements AdventureStage {
             } else {
                 user = Arrays.asList(input.toLowerCase().split(" *, *"));
             }
+            if (reference.size() == 0){
+                //System.out.println("reference has length of 0!");
+                break;
+            }
             double similarity = arraySimilarity(reference, user);
             if (similarity != 1 && reference.size() != 0) {
                 long numCorrect = Math.round(similarity * reference.size());
